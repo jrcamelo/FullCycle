@@ -5,12 +5,12 @@ services:
     build: .
     container_name: simulator
     networks:
-      - kafka_broker-kafka
+      - kafka_fc-network
     volumes:
       - .:/go/src/
     extra_hosts:
       - "host.docker.internal:172.17.0.1"
 
 networks:
-  kafka_broker-kafka:
+  kafka_fc-network:
     external: true
