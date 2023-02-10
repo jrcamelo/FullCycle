@@ -11,6 +11,10 @@ services:
       - .:/home/node/app
     depends_on:
       - db
+    networks:
+      - kafka_fc-network
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
   
   db:
     image: mongo:4.4.4
@@ -22,6 +26,10 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=root
       - MONGO_INITDB_DATABASE=nest
+    networks:
+      - kafka_fc-network
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
   
   mongo-express:
     image: mongo-express
@@ -36,3 +44,11 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=root
     depends_on:
       - db
+    networks:
+      - kafka_fc-network
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+
+networks:
+  kafka_fc-network:
+    external: true
