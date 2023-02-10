@@ -31,7 +31,7 @@
     "@nestjs/platform-socket.io": "^7.6.15",
     "@nestjs/websockets": "^7.6.15",
     "kafkajs": "^1.15.0",
-    "mongoose": "^5.12.3",
+    "mongoose": "^5.13.15",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6"
